@@ -1,15 +1,44 @@
 import './App.css';
-import Sign from './components/sign/Sign';
-import Calculate from './components/calculate/Calculate';
+import Navbar from './components/navbar/Navbar';
+import { useState } from 'react';
+import Home from './components/home/Home';
+import AboutMe from './components/aboutme/AboutMe';
+import Projects from './components/projects/Projects';
+import Contact from './components/contact/Contact';
 
 function App() {
+  const [numeroPagina, setNumeroPagina] = useState(0);
+
+  const handleValueFromChild = (value) => {
+    setNumeroPagina(value);
+  };
+
   return (
-    <> 
-    <div className="App">
-      <h1>Hello world</h1>
-      <Sign/>
-      <Calculate/>
-    </div>
+    <>
+      <div className="App">
+        <Navbar sendValueToParent={handleValueFromChild} />
+        {
+          numeroPagina === 0 ? (
+            <>
+              <Home />
+            </>
+          ) : numeroPagina === 1 ? (
+            <>
+              <AboutMe />
+            </>
+          ) : numeroPagina === 2 ? (
+            <>
+              <Projects />
+            </>
+          ) : numeroPagina === 3 ? (
+            <>
+              <Contact />
+            </>
+          ) : (
+            <h1>Pagina no encontrada</h1>
+          )
+        }
+      </div>
     </>
   );
 }
