@@ -5,6 +5,7 @@ import Home from './components/home/Home';
 import AboutMe from './components/aboutme/AboutMe';
 import Projects from './components/projects/Projects';
 import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [numeroPagina, setNumeroPagina] = useState(0);
@@ -38,6 +39,7 @@ function App() {
             <h1>Pagina no encontrada</h1>
           )
         }
+        <Footer />
       </div>
     </>
   );
