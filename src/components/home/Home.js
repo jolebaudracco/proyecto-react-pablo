@@ -1,7 +1,5 @@
 import React from 'react'
-import Sign from '../sign/Sign'
-import Botoncito from '../sign/Botoncito'
-import { Box, width } from '@mui/system'
+import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
 
 const Home = () => {
