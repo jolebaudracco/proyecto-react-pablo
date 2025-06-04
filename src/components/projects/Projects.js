@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import IndividualProject from './IndividualProject';
 
 const projectData = [
     {
@@ -76,19 +77,7 @@ const Projects = () => {
             >
                 {projectData.map((project, index) => (
                     <SwiperSlide key={index} style={{ width: 300 }}>
-                        <Card sx={{ bgcolor: 'white', borderRadius: 3, boxShadow: 6 }}>
-                            <CardMedia
-                                component="img"
-                                image={project.image}
-                                alt={project.title}
-                                height="180"
-                            />
-                            <CardContent>
-                                <Typography variant="h6">{project.title}</Typography>
-                                <Typography variant="body2">{project.description}</Typography>
-                                <Button>Github</Button>
-                            </CardContent>
-                        </Card>
+                        <IndividualProject data={project}/>
                     </SwiperSlide>
                 ))}
             </Swiper>
